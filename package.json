@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/jscomplete/learn-fullstack-javascript#readme",
   "dependencies": {
+    "babel-node": "0.0.1-security",
     "express": "^4.14.0",
-    "mongodb": "^2.2.10",
+    "mongodb": "^3.5.8",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
@@ -33,6 +34,6 @@
     "eslint": "^3.7.1",
     "eslint-plugin-react": "^6.4.0",
     "nodemon": "^1.11.0",
-    "webpack": "^1.13.2"
+    "webpack": "^4.43.0"
   }
 }
