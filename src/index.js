@@ -1,7 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const App = (props) => {
+    return (
+        <h2 className="text-center">
+            {props.headerMessage}
+        </h2>
+    );
+};
+
 ReactDOM.render(
-    React.createElement('h2', null, 'Hello React'),
+    <App headerMessage="Hello Props!" />,
     document.getElementById('root')
 );
