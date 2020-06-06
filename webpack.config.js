@@ -17,5 +17,13 @@ module.exports = {
             }
         }
         ]
+    },
+    devServer: {
+        contentBase: './src',
+        publicPath: '/public',
+        watchOptions: {
+        poll: true
+        },
+        watchContentBase: true
     }
   }
