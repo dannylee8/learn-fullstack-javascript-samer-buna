@@ -15,10 +15,6 @@ module.exports = {
             options: {
                 presets: ['@babel/preset-env', '@babel/react', '@babel/preset-flow']
             }
-        },
-        {
-            test: /\.json$/,
-            loader: 'raw-loader'
         }
         ]
     },
