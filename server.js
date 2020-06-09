@@ -14,6 +14,8 @@ server.use(
 );
 server.set("view engine", "ejs");
 
+import "./serverRender";
+
 server.get("/", (req, res) => {
   res.render("index", {
     content: "Hello from <em>EJS</em>",
@@ -29,6 +31,6 @@ server.use(express.static("public"));
 //   });
 // });
 
-server.listen(config.port, () => {
+server.listen(config.port, config.host, () => {
   console.info("Express listening on port ", config.port);
 });
