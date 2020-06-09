@@ -12,6 +12,14 @@ class App extends React.Component {
         pageHeader: "Naming Contests" 
     };
 
+    componentDidMount() {
+        // timers, listeners, ajax
+    }
+
+    componentWillUnmount() {
+        // cleanup
+    }
+
     render() {
         return (
             <div className="App">
