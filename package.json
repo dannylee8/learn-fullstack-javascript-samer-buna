@@ -23,7 +23,9 @@
     "babel-loader": "^8.1.0",
     "ejs": "^2.5.2",
     "express": "^4.17.1",
+    "json-loader": "^0.5.7",
     "mongodb": "^2.2.10",
+    "raw-loader": "^4.0.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
