@@ -1,7 +1,8 @@
 import React from "react";
 import Header from "./Header";
-import ContestPreview from "./ContestPreview";
-import axios from "axios";
+import ContestList from "./ContestList";
+
+const pushState = (obj, url) => window.history.pushState(obj, "", url);
 
 class App extends React.Component {
   // constructor(props) {
@@ -11,33 +12,22 @@ class App extends React.Component {
 
   state = {
     pageHeader: "Naming Contests",
-    contests: [],
+    contests: this.props.initialContests,
   };
 
-  componentDidMount() {
-    axios
-      .get("/api/contests")
-      .then((resp) => {
-        this.setState({
-          contests: resp.data.contests,
-        });
-      })
-      .catch(console.error);
-  }
+  componentDidMount() {}
 
-  componentWillUnmount() {
-    // cleanup
-  }
+  componentWillUnmount() {}
+
+  fetchContest = (contestID) => {
+    pushState({ currentContestID: contestID }, `/contest/${contestID}`);
+  };
 
   render() {
     return (
       <div className="App">
         <Header message={this.state.pageHeader} />
-        <div>
-          {this.state.contests.map((contest) => (
-            <ContestPreview key={contest.id} {...contest} />
-          ))}
-        </div>
+        <ContestList contests={this.state.contests} />
       </div>
     );
   }
