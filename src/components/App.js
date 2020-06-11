@@ -21,7 +21,9 @@ class App extends React.Component {
     });
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    onPopState(null);
+  }
 
   fetchContest = (contestID) => {
     pushState({ currentContestID: contestID }, `/contest/${contestID}`);
