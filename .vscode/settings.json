@@ -1,0 +1,7 @@
+{
+"emmet.showSuggestionsAsSnippets": true,
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+}
+}
