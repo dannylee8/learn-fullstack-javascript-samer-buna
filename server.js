@@ -12,12 +12,13 @@ server.use(
     dest: path.join(__dirname, "public"),
   })
 );
+
 server.set("view engine", "ejs");
 
 import serverRender from "./serverRender";
 
-server.get("/", (req, res) => {
-  serverRender()
+server.get(["/", "/contest/:contestID"], (req, res) => {
+  serverRender(req.params.contestID)
     .then(({ initialMarkup, initialData }) => {
       res.render("index", {
         initialMarkup,

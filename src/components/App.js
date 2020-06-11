@@ -7,14 +7,7 @@ import * as api from "../api";
 const pushState = (obj, url) => window.history.pushState(obj, "", url);
 
 class App extends React.Component {
-  // constructor(props) {
-  //     super(props);
-  //     this.state = { test: 42 };
-  // }
-
-  state = {
-    contests: this.props.initialContests,
-  };
+  state = this.props.initialData;
 
   componentDidMount() {}
 

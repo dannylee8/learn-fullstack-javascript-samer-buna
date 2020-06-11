@@ -6,13 +6,35 @@ import App from "./src/components/App";
 import config from "./config";
 import axios from "axios";
 
-const serverRender = () =>
-  axios.get(`${config.serverURL}/api/contests`).then((resp) => {
+const getApiUrl = (contestID) => {
+  if (contestID) {
+    return `${config.serverURL}/api/contests/${contestID}`;
+  }
+  return `${config.serverURL}/api/contests`;
+};
+
+const getInitialData = (contestID, apiData) => {
+  if (contestID) {
+    return {
+      currentContestID: apiData.id,
+      contests: {
+        [apiData.id]: apiData,
+      },
+    };
+  }
+  return {
+    contests: apiData.contests,
+  };
+};
+
+const serverRender = (contestID) =>
+  axios.get(getApiUrl(contestID)).then((resp) => {
+    const initialData = getInitialData(contestID, resp.data);
     return {
       initialMarkup: ReactDOMServer.renderToString(
-        <App initialContests={resp.data.contests} />
+        <App initialData={initialData} />
       ),
-      initialData: resp.data,
+      initialData,
     };
   });
 
