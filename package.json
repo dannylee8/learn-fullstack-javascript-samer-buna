@@ -25,7 +25,7 @@
     "ejs": "^2.5.2",
     "express": "^4.17.1",
     "json-loader": "^0.5.7",
-    "mongodb": "^2.2.10",
+    "mongodb": "^3.6.0",
     "node-sass-middleware": "^0.11.0",
     "raw-loader": "^4.0.1",
     "react": "^15.3.2",
@@ -42,7 +42,7 @@
     "eslint": "^7.6.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^6.4.0",
-    "nodemon": "^1.11.0",
+    "nodemon": "^2.0.4",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
